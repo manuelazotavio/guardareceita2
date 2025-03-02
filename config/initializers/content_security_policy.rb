@@ -1,5 +1,4 @@
 
-
 Rails.application.configure do
   config.content_security_policy do |policy|
     policy.default_src :self, :https, "http://localhost:3000"
