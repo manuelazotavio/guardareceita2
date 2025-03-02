@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0c2db3ba0393a8cca6e7e609a8524fac674f211f
 
 Rails.application.configure do
   config.content_security_policy do |policy|
@@ -20,4 +23,8 @@ Rails.application.configure do
 
   # Report violations without enforcing the policy.
   # config.content_security_policy_report_only = true
-end
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> 0c2db3ba0393a8cca6e7e609a8524fac674f211f
