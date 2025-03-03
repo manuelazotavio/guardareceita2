@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   allow_unauthenticated_access
+  skip_forgery_protection
     before_action :set_recipe, only: %i[ show edit update destroy ]
 
     def index
