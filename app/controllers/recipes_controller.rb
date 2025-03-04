@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
     def create
       @recipe = Recipe.new(recipe_params)
       if @recipe.save
-        redirect_to @recipe
+        puts "recipe post ok"
       else
         render :new, status: :unprocessable_entity
       end
@@ -28,15 +28,18 @@ class RecipesController < ApplicationController
 
     def update
       if @recipe.update(recipe_params)
-        redirect_to @recipe
+        puts "recipe update ok"
       else
         render :edit, status: :unprocessable_entity
       end
     end
 
     def destroy
-      @recipe.destroy
-      redirect_to recipes_path
+      if @recipe.destroy
+        puts "recipe delete ok"
+      else
+        render :destroy, status: :unprocessable_entity
+      end
     end
 
     private
