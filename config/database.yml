@@ -2,6 +2,15 @@ default: &default
   adapter: postgresql
   url: <%= ENV["DATABASE_URL"] %>
   pool: 5
+  host: aws-0-sa-east-1.pooler.supabase.com
+  port: 5432
+  database: postgres
+  user: postgres.qdhcacsfkwbnmhrguqbi
+  pool_mode: session
+  password: manulinda123
+
+
+
 
 development:
   <<: *default
