@@ -7,7 +7,7 @@ default: &default
   database: postgres
   user: postgres.qdhcacsfkwbnmhrguqbi
   pool_mode: session
-  password: manulinda123
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
 
 
