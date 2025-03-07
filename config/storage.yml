@@ -6,6 +6,13 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
+supabase:
+  service: Supabase
+  access_key: <%= Rails.application.credentials.dig(:supabase, :access_key) %> 
+  secret_key: <%= Rails.application.credentials.dig(:supabase, :secret_key) %> 
+  bucket: 'images'
+  endpoint: 'https://qdhcacsfkwbnmhrguqbi.supabase.co/storage/v1/s3' 
+
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
