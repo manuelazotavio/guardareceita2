@@ -7,10 +7,7 @@ default: &default
   database: postgres
   user: postgres.qdhcacsfkwbnmhrguqbi
   pool_mode: session
-  password: <%= ENV["DATABASE_PASSWORD"] %>
-
-
-
+  password: <%= Rails.application.credentials.dig(:supabase, :password) %>
 
 
 development:

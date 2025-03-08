@@ -71,10 +71,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_06_174126) do
     t.string "ingredients"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "ip_address"
     t.string "user_agent"
     t.datetime "created_at", null: false
@@ -92,5 +93,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_06_174126) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "recipes", "users", name: "recipes_user_id_fkey"
   add_foreign_key "sessions", "users"
 end

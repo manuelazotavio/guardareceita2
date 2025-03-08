@@ -10,6 +10,7 @@ class CreateRecipes < ActiveRecord::Migration[8.0]
       t.string :instruction
       t.string :ingredients
 
+      t.references :user, null: false, foreign_key: true, index: true
       t.timestamps
     end
   end
