@@ -48,6 +48,6 @@ class RecipesController < ApplicationController
       end
 
       def recipe_params
-        params.expect(recipe: [ :name, :description, :favorited, :time, :portions, :rating, :ingredients, :instruction ])
+        params.expect(recipe: [ :name, :description, :user_id, :time, :portions, :rating, :ingredients, :instruction ])
       end
 end
