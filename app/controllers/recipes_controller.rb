@@ -30,9 +30,23 @@ class RecipesController < ApplicationController
       if @recipe.update(recipe_params)
         puts "recipe update ok"
       else
+        def log_errors
+          if errors.any?
+            Rails.logger.error("Validation failed: #{errors.full_messages.join(', ')}")
+          end
+        end
         render :edit, status: :unprocessable_entity
       end
     end
+
+    # def update
+    #   newRecipe = @recipe.update(recipe_params)
+    #   if newRecipe
+    #     puts "recipe update ok"
+    #   else
+    #     puts newRecipe.errors
+    #   end
+    # end
 
     def destroy
       if @recipe.destroy
