@@ -34,16 +34,6 @@ class RecipesController < ApplicationController
         render :edit, status: :unprocessable_entity
       end
     end
-
-    # def update
-    #   newRecipe = @recipe.update(recipe_params)
-    #   if newRecipe
-    #     puts "recipe update ok"
-    #   else
-    #     puts newRecipe.errors
-    #   end
-    # end
-
     def destroy
       if @recipe.destroy
         puts "recipe delete ok"
