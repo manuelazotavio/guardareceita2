@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
     end
 
     def update
-      if @recipe.update(recipe_params)
+      if @recipe.update(recipe_update_params)
         puts "recipe update ok"
       else
 
@@ -59,5 +59,9 @@ class RecipesController < ApplicationController
 
       def recipe_params
         params.expect(recipe: [ :name, :description, :user_id, :time, :portions, :rating, :ingredients, :instruction ])
+      end
+
+      def recipe_update_params
+        params.expect(recipe: [ :name, :description, :user_id, :time, :portions, :rating, :ingredients, :instruction, :favorited ])
       end
 end
