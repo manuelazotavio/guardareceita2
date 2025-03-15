@@ -1,29 +1,28 @@
 <h1>New recipe</h1>
+<%= stylesheet_link_tag "recipes_form"%>
 
 <%= form_with model: recipe do |form| %>
-  <div>
-    <%= form.label :name %>
+  <div id="container">
+
+    <%= form.label :Nome %>
     <%= form.text_field :name %>
 
-    <%= form.label :rating %>
+    <%= form.label :Avaliação %>
     <%= form.text_field :rating %>
 
-    <%= form.label :portions %>
+    <%= form.label :Porções %>
     <%= form.text_field :portions %>
 
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-
-    <%= form.label :ingredients %>
+    <%= form.label :Ingredientes %>
     <%= form.text_field :ingredients %>
 
-    <%= form.label :description %>
+    <%= form.label :Descrição %>
     <%= form.text_field :description %>
 
-    <%= form.label :instruction %>
+    <%= form.label :Instrução %>
     <%= form.text_field :instruction %>
 
-    <%= form.label :time %>
+    <%= form.label :Tempo %>
     <%= form.text_field :time %>
   </div>
 

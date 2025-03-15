@@ -2,9 +2,11 @@
 
 <div id="recipes">
   <%= debug @recipes %>
+  <h1>Nenhuma receita.</h1>
+
   <%= link_to "New recipe", new_recipe_path %>
   <% @recipes.each do |recipe| %>
-    <div>
+    <div id="teste">
      <%= link_to recipe.name, recipe %>
     </div>
 
