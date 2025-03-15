@@ -5,6 +5,8 @@ class PasswordsController < ApplicationController
   def new
   end
 
+
+  # acha o user e manda uma mensagem de reset de senha pro email cadastrado
   def create
     if user = User.find_by(email_address: params[:email_address])
       PasswordsMailer.reset(user).deliver_later
@@ -15,7 +17,7 @@ class PasswordsController < ApplicationController
 
   def edit
   end
-
+  # acha o user e reseta a senha nova
   def update
     if @user.update(params.permit(:password, :password_confirmation))
       redirect_to new_session_path, notice: "Password has been reset."
@@ -25,6 +27,7 @@ class PasswordsController < ApplicationController
   end
 
   private
+    # acha o usuário pelo token que é passado no email
     def set_user_by_token
       @user = User.find_by_password_reset_token!(params[:token])
     rescue ActiveSupport::MessageVerifier::InvalidSignature
